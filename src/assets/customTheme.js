@@ -8,7 +8,7 @@ export const theme = createTheme({
       main: indigo[50],
     },
     secondary: {
-      main: "#FFF",
+      main: indigo[700],
     },
   },
   typography: {

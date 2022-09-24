@@ -1,4 +1,11 @@
-import { AppBar, Box, IconButton, Typography, Badge } from "@mui/material";
+import {
+  AppBar,
+  Box,
+  IconButton,
+  Typography,
+  Badge,
+  Avatar,
+} from "@mui/material";
 import {
   Mail as MailIcon,
   Notifications as NotificationsIcon,
@@ -13,17 +20,18 @@ const Topbar = () => {
       </Typography>
       <SearchField />
       <Box sx={{ flexGrow: 1 }} />
-      <Box sx={{ display: "flex" }}>
-        <IconButton size="large" color="inherit">
-          <Badge variant="dot" overlap="circular" color="error">
+      <Box sx={{ display: "flex", alignItems: "center" }}>
+        <IconButton color="inherit">
+          <Badge variant="dot" overlap="circular" color="secondary">
             <MailIcon />
           </Badge>
         </IconButton>
-        <IconButton size="large" color="inherit">
-          <Badge variant="dot" overlap="circular" color="error">
+        <IconButton color="inherit">
+          <Badge variant="dot" overlap="circular" color="secondary">
             <NotificationsIcon />
           </Badge>
         </IconButton>
+        <Avatar src="/images/me.jpg" sx={{ width: 56, height: 56, mr: 2.5 }} />
       </Box>
     </AppBar>
   );

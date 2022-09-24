@@ -1,10 +1,12 @@
 import { Box } from "@mui/material";
+import Menu from "./Menu";
 import Topbar from "./Topbar";
 
 const Layout = ({ children }) => {
   return (
     <Box sx={styles.container}>
       <Topbar />
+      <Menu />
       <Box sx={styles.children} className="children">
         {children}
       </Box>
@@ -14,7 +16,7 @@ const Layout = ({ children }) => {
 
 const styles = {
   container: {
-    p: "90px 100px 30px 30px",
+    p: "90px 90px 20px 20px",
     width: "100%",
     height: "100vh",
     backgroundColor: "primary.main",
