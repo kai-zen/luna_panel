@@ -6,7 +6,7 @@ import { menuItems } from "../../assets/constants";
 const Menu = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  console.log(location);
+
   return (
     <Box sx={styles.container}>
       {menuItems.map((item) => (

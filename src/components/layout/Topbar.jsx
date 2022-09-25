@@ -26,8 +26,8 @@ const Topbar = () => {
         luna
       </Typography>
       <SearchField />
-      <Box sx={{ flexGrow: 1 }} />
-      <Box sx={{ display: "flex", alignItems: "center" }}>
+      <div style={{ flexGrow: 1 }} />
+      <Box sx={styles.iconContainer}>
         <IconButton color="inherit">
           <Badge variant="dot" overlap="circular" color="secondary">
             <MailIcon />
@@ -38,7 +38,7 @@ const Topbar = () => {
             <NotificationsIcon />
           </Badge>
         </IconButton>
-        <Avatar src="/images/me.jpg" sx={{ width: 56, height: 56, mr: 2.5 }} />
+        <Avatar src="/images/me.jpg" sx={styles.avatar} />
       </Box>
     </AppBar>
   );
@@ -59,6 +59,8 @@ const styles = {
     ml: 5,
     cursor: "pointer",
   },
+  iconContainer: { display: "flex", alignItems: "center" },
+  avatar: { width: 56, height: 56, mr: 2.5 },
 };
 
 export default Topbar;
