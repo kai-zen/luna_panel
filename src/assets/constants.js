@@ -1,6 +1,4 @@
 import {
-  Home,
-  HomeOutlined,
   Checkroom,
   Extension,
   ExtensionOutlined,
@@ -20,12 +18,6 @@ import {
 } from "@mui/icons-material";
 
 export const menuItems = [
-  {
-    title: "خانه",
-    path: "/",
-    active: <Home sx={{ fontSize: "inherit" }} />,
-    outlined: <HomeOutlined sx={{ fontSize: "inherit" }} />,
-  },
   {
     title: "محصولات",
     path: "/products",

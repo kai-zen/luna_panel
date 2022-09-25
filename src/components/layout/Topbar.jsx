@@ -11,11 +11,18 @@ import {
   Notifications as NotificationsIcon,
 } from "@mui/icons-material";
 import { SearchField } from "../common";
+import { useNavigate } from "react-router-dom";
 
 const Topbar = () => {
+  const navigate = useNavigate();
   return (
     <AppBar elevation={0} sx={styles.container}>
-      <Typography variant="h3" noWrap sx={styles.logo}>
+      <Typography
+        variant="h3"
+        noWrap
+        sx={styles.logo}
+        onClick={() => navigate("/")}
+      >
         luna
       </Typography>
       <SearchField />
@@ -50,6 +57,7 @@ const styles = {
   logo: {
     fontFamily: "pacifico",
     ml: 5,
+    cursor: "pointer",
   },
 };
 
