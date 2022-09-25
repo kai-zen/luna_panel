@@ -1,15 +1,13 @@
 import { Box } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import { PageTitle, VerticalSpace } from "../components/common";
-import {
-  ActionButtons,
-  Filtering,
-  QuantityLimit,
-  Sorting,
-} from "../components/Products";
+import { productFields } from "../assets/constants";
+import { PageTitle } from "../components/common";
+import { Filtering, QuantityLimit, Sorting } from "../components/filtering";
+import { ActionButtons } from "../components/Products";
 
 const Products = () => {
   const navigate = useNavigate();
+
   return (
     <Box>
       <PageTitle
@@ -21,15 +19,22 @@ const Products = () => {
       >
         صفحه مدیریت محصولات
       </PageTitle>
-      <QuantityLimit />
-      <VerticalSpace amount="30px" />
-      <Sorting />
-      <VerticalSpace amount="30px" />
-      <Filtering />
-      <VerticalSpace amount="30px" />
-      <ActionButtons />
+      <Box sx={styles.filtersContainer}>
+        <QuantityLimit />
+        <Sorting fields={productFields} />
+        <Filtering fields={productFields} />
+        <ActionButtons />
+      </Box>
     </Box>
   );
+};
+
+const styles = {
+  filtersContainer: {
+    display: "flex",
+    flexDirection: "column",
+    gap: 3,
+  },
 };
 
 export default Products;

@@ -1,30 +1,23 @@
 import { useState } from "react";
-import { Box, Button, Chip, Typography } from "@mui/material";
+import { Box, Chip, Typography } from "@mui/material";
 import { NumberInput } from "../common";
+import { ApplyFilterButton } from ".";
 
 const QuantityLimit = () => {
+  // const { addFilter, removeFilter } = props;
   const [isUnitPercent, setIsUnitPercent] = useState(true);
-  const [submittedAmount, setSubmittedAmount] = useState(false);
-
-  const handleClick = () => {
-    setIsUnitPercent(!isUnitPercent);
-  };
-
-  const addFilter = () => {
-    setSubmittedAmount(true);
-  };
-
-  const removeFilter = () => {
-    setSubmittedAmount(false);
-  };
+  const [submitted, setSubmitted] = useState(false);
 
   return (
     <Box sx={styles.container}>
       <Typography variant="subtitle2">تعداد نتایج: </Typography>
-      {submittedAmount ? (
+      {submitted ? (
         <Chip
           label="حداکثر 100 عدد از نتایج"
-          onDelete={removeFilter}
+          onDelete={() => {
+            setSubmitted(false);
+            // removeFilter();
+          }}
           sx={{ direction: "ltr" }}
         />
       ) : (
@@ -34,20 +27,18 @@ const QuantityLimit = () => {
             startAdornment={
               <Chip
                 label={`${isUnitPercent ? "%" : "عدد"}`}
-                onClick={handleClick}
+                onClick={() => setIsUnitPercent(!isUnitPercent)}
                 size="large"
-                sx={{ lineHeight: "40px", ml: 1 }}
+                sx={styles.chip}
               />
             }
           />
-          <Button
-            variant="contained"
-            size="small"
-            disableElevation
-            onClick={addFilter}
-          >
-            اعمال
-          </Button>
+          <ApplyFilterButton
+            click={() => {
+              setSubmitted(true);
+              // addFilter();
+            }}
+          />
         </>
       )}
     </Box>
@@ -60,6 +51,7 @@ const styles = {
     gap: 2,
     alignItems: "center",
   },
+  chip: { lineHeight: "40px", ml: 1 },
 };
 
 export default QuantityLimit;

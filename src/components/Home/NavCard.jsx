@@ -9,9 +9,9 @@ const NavCard = ({ item }) => {
       <Paper
         sx={styles.container}
         onClick={() => navigate(item.path)}
-        elevation={6}
+        elevation={4}
       >
-        <Typography variant="h6">{item.title}</Typography>
+        <Typography sx={styles.text}>{item.title}</Typography>
         <Box sx={styles.item}>{item.active}</Box>
       </Paper>
     </Grid>
@@ -20,7 +20,8 @@ const NavCard = ({ item }) => {
 
 const styles = {
   container: {
-    p: "12px 30px 20px",
+    width: "100px",
+    py: "12px",
     borderRadius: "25px",
     display: "flex",
     flexDirection: "column",
@@ -33,14 +34,11 @@ const styles = {
       backgroundColor: indigo[100],
     },
   },
+  text: {
+    fontWeight: "500",
+  },
   item: {
-    width: "100px",
-    height: "100px",
-    borderRadius: "15px",
-    fontSize: "3.5rem",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
+    fontSize: "2rem",
   },
 };
 

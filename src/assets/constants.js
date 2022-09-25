@@ -73,3 +73,44 @@ export const menuItems = [
     outlined: <LocalOfferOutlined sx={{ fontSize: "inherit" }} />,
   },
 ];
+
+export const productFields = [
+  {
+    title: "قیمت",
+    value: 0,
+  },
+  {
+    title: "تعداد فروش",
+    value: 1,
+  },
+  {
+    title: "تاریخ",
+    value: 2,
+  },
+  {
+    title: "نام محصول",
+    value: 3,
+  },
+];
+
+export const moreOrLess = [
+  {
+    title: "بیشتر از",
+    value: 0,
+  },
+  {
+    title: "کمتر از",
+    value: 1,
+  },
+];
+
+export const ascendingOrDescending = [
+  {
+    title: "صعودی",
+    value: 0,
+  },
+  {
+    title: "نزولی",
+    value: 1,
+  },
+];
