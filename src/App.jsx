@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "@mui/material/styles";
-import { Home } from "./pages";
+import { Home, Products } from "./pages";
 import { theme } from "./assets/customTheme";
 import Layout from "./components/layout";
 
@@ -10,6 +10,7 @@ const App = () => {
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/products" element={<Products />} />
         </Routes>
       </Layout>
     </ThemeProvider>

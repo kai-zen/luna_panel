@@ -10,6 +10,9 @@ export const theme = createTheme({
     secondary: {
       main: indigo[700],
     },
+    CTA: {
+      main: indigo[400],
+    },
   },
   typography: {
     fontFamily: "iransans",

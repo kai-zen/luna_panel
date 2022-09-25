@@ -37,7 +37,7 @@ const styles = {
     width: "100px",
     height: "100px",
     borderRadius: "15px",
-    fontSize: "4rem",
+    fontSize: "3.5rem",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",

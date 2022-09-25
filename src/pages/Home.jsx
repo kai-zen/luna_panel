@@ -1,21 +1,17 @@
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import { indigo } from "@mui/material/colors";
 import { menuItems } from "../assets/constants";
-import { VerticalSpace } from "../components/common";
-import NavCard from "../components/Home/NavCard";
+import { PageTitle } from "../components/common";
+import { NavCard } from "../components/Home";
 
 const Home = () => {
   return (
     <Box>
-      <Typography variant="h6">
+      <PageTitle subtitle="از طریق منوی پایین یا سمت راست به صفحه مورد نظر خود بروید.">
         <span style={styles.name}>{` ${"علی"} `}</span>
         عزیز به پنل مدیریتی فروشگاه لونا خوش آمدی!
-      </Typography>
-      <VerticalSpace amount="5px" />
-      <Typography variant="caption">
-        از طریق منوی پایین یا سمت راست به صفحه مورد نظر خود بروید.
-      </Typography>
-      <Grid container sx={styles.grid} spacing={4}>
+      </PageTitle>
+      <Grid container spacing={4}>
         {menuItems.map((item) => (
           <NavCard item={item} />
         ))}
@@ -28,9 +24,6 @@ const styles = {
   name: {
     fontWeight: "bold",
     color: indigo[700],
-  },
-  grid: {
-    mt: 3,
   },
 };
 
