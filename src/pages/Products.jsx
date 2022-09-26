@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { productFields } from "../assets/constants";
 import { PageTitle } from "../components/common";
 import { Filtering, QuantityLimit, Sorting } from "../components/filtering";
-import { ActionButtons } from "../components/Products";
+import { ProductsTable } from "../components/Products";
 
 const Products = () => {
   const navigate = useNavigate();
@@ -23,8 +23,8 @@ const Products = () => {
         <QuantityLimit />
         <Sorting fields={productFields} />
         <Filtering fields={productFields} />
-        <ActionButtons />
       </Box>
+      <ProductsTable />
     </Box>
   );
 };

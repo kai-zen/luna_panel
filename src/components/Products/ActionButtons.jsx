@@ -8,11 +8,15 @@ const ActionButtons = () => {
       click: () => {},
     },
     {
-      title: "اتمام موجودی",
+      title: "حذف تخفیف",
       click: () => {},
     },
     {
-      title: "حذف تخفیف",
+      title: "افزودن موجودی",
+      click: () => {},
+    },
+    {
+      title: "اتمام موجودی",
       click: () => {},
     },
   ];
