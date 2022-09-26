@@ -8,7 +8,9 @@ const Dropdown = ({ data }) => {
       defaultValue={data[0].value}
     >
       {data.map((item) => (
-        <MenuItem value={item.value}>{item.title}</MenuItem>
+        <MenuItem value={item.value} key={item.title}>
+          {item.title}
+        </MenuItem>
       ))}
     </Select>
   );

@@ -1,11 +1,15 @@
 import { Box } from "@mui/material";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { productFields } from "../assets/constants";
+import { headCells, productFields, rows } from "../assets/constants";
 import { PageTitle } from "../components/common";
 import { Filtering, QuantityLimit, Sorting } from "../components/filtering";
-import { ProductsTable } from "../components/Products";
+import ActionButtons from "../components/Products/ActionButtons";
+import SelectableTable from "../components/selectable-table/index.jsx";
 
 const Products = () => {
+  const [selected, setSelected] = useState([]);
+
   const navigate = useNavigate();
 
   return (
@@ -24,7 +28,13 @@ const Products = () => {
         <Sorting fields={productFields} />
         <Filtering fields={productFields} />
       </Box>
-      <ProductsTable />
+      <SelectableTable
+        rows={rows}
+        headCells={headCells}
+        selected={selected}
+        setSelected={setSelected}
+        actionButtons={<ActionButtons />}
+      />
     </Box>
   );
 };

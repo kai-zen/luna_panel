@@ -1,6 +1,7 @@
 import { Checkbox, TableBody, TableCell, TableRow } from "@mui/material";
 
-const ProductsTableBody = ({ isSelected, handleClick, data }) => {
+const SelectableTableBody = (props) => {
+  const { isSelected, handleClick, data } = props;
   return (
     <TableBody>
       {data.map((row) => {
@@ -11,14 +12,16 @@ const ProductsTableBody = ({ isSelected, handleClick, data }) => {
             onClick={() => handleClick(row)}
             role="checkbox"
             tabIndex={-1}
-            key={row.name}
+            key={name}
             selected={isSelected(row)}
           >
             <TableCell padding="checkbox">
               <Checkbox color="secondary" checked={isSelected(row)} />
             </TableCell>
-            {[name, calories, fat, carbs, protein].map((value) => (
-              <TableCell align="center">{value}</TableCell>
+            {[name, calories, fat, carbs, protein].map((value, i) => (
+              <TableCell align="center" key={`${value}${i}`}>
+                {value}
+              </TableCell>
             ))}
           </TableRow>
         );
@@ -27,4 +30,4 @@ const ProductsTableBody = ({ isSelected, handleClick, data }) => {
   );
 };
 
-export default ProductsTableBody;
+export default SelectableTableBody;

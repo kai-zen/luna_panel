@@ -24,7 +24,7 @@ const ActionButtons = () => {
   return (
     <Box sx={styles.container}>
       {buttonsInfo.map((btn) => (
-        <ActionButton title={btn.title} click={btn.click} />
+        <ActionButton title={btn.title} click={btn.click} key={btn.title} />
       ))}
     </Box>
   );

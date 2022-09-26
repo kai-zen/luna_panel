@@ -1,5 +1,4 @@
 import { Box, Grid, Paper, Typography } from "@mui/material";
-import { indigo } from "@mui/material/colors";
 import { useNavigate } from "react-router-dom";
 
 const NavCard = ({ item }) => {
@@ -31,7 +30,7 @@ const styles = {
     cursor: "pointer",
     transition: ".5s",
     "&:hover": {
-      backgroundColor: indigo[100],
+      backgroundColor: "primary.main",
     },
   },
   text: {

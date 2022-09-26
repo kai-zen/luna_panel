@@ -2,12 +2,11 @@ import {
   Instagram as InstagramIcon,
   WhatsApp as WhatsappIcon,
 } from "@mui/icons-material";
-import { Typography } from "@mui/material";
-import { Box } from "@mui/system";
+import { Paper, Typography } from "@mui/material";
 
 const ContactManager = () => {
   return (
-    <Box sx={styles.container}>
+    <Paper sx={styles.container} elevation={0}>
       <Typography sx={styles.title}>راه های ارتباط با مدیر سایت:</Typography>
       <Typography sx={styles.text}>
         +98 933 890 6524
@@ -17,7 +16,7 @@ const ContactManager = () => {
         ali.razipur
         <InstagramIcon />
       </Typography>
-    </Box>
+    </Paper>
   );
 };
 

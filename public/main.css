@@ -15,7 +15,6 @@
   src: url("./fonts/iransans/eot/IRANSansWeb(FaNum)_Bold.eot") format("eot");
   src: url("./fonts/iransans/eot/IRANSansWeb(FaNum)_Bold.eot?#iefix")
       format("embedded-opentype"),
-    url("./woff2/IRANSansWeb(FaNum)_Bold.woff2") format("woff2"),
     url("./fonts/iransans/woff/IRANSansWeb(FaNum)_Bold.woff") format("woff"),
     url("./fonts/iransans/ttf/IRANSansWeb(FaNum)_Bold.ttf") format("truetype");
 }

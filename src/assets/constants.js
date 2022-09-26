@@ -16,6 +16,9 @@ import {
   LocalOffer,
   LocalOfferOutlined,
 } from "@mui/icons-material";
+import { teal, green, blueGrey } from "@mui/material/colors";
+
+export const allColors = [teal, green, blueGrey];
 
 export const menuItems = [
   {
@@ -143,29 +146,9 @@ export const rows = [
 ];
 
 export const headCells = [
-  {
-    id: "name",
-    numeric: false,
-    label: "Dessert (100g serving)",
-  },
-  {
-    id: "calories",
-    numeric: true,
-    label: "Calories",
-  },
-  {
-    id: "fat",
-    numeric: true,
-    label: "Fat (g)",
-  },
-  {
-    id: "carbs",
-    numeric: true,
-    label: "Carbs (g)",
-  },
-  {
-    id: "protein",
-    numeric: true,
-    label: "Protein (g)",
-  },
+  "Dessert (100g serving)",
+  "Calories",
+  "Fat (g)",
+  "Carbs (g)",
+  "Protein (g)",
 ];

@@ -10,12 +10,14 @@ const Menu = () => {
   return (
     <Box sx={styles.container}>
       {menuItems.map((item) => (
-        <Tooltip title={item.title} placement="left">
+        <Tooltip title={item.title} key={item.title} placement="left">
           <IconButton
             sx={{
               ...styles.item,
               backgroundColor: `${
-                location.pathname === item.path ? indigo[200] : indigo[50]
+                location.pathname === item.path
+                  ? "secondary.light"
+                  : "primary.main"
               }`,
             }}
             onClick={() => navigate(item.path)}

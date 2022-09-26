@@ -1,7 +1,7 @@
 import { Checkbox, TableCell, TableHead, TableRow } from "@mui/material";
-import { headCells } from "../../assets/constants";
 
-const ProductsTableHead = ({ selectedLength, rowsLength, selectAll }) => {
+const SelectableTableHead = (props) => {
+  const { selectedLength, rowsLength, selectAll, fieldsName } = props;
   return (
     <TableHead>
       <TableRow>
@@ -13,14 +13,9 @@ const ProductsTableHead = ({ selectedLength, rowsLength, selectAll }) => {
             onChange={selectAll}
           />
         </TableCell>
-        {headCells.map((headCell) => (
-          <TableCell
-            key={headCell.id}
-            align="center"
-            padding="normal"
-            sortDirection={false}
-          >
-            {headCell.label}
+        {fieldsName.map((fieldName) => (
+          <TableCell key={fieldName} align="center">
+            {fieldName}
           </TableCell>
         ))}
       </TableRow>
@@ -28,4 +23,4 @@ const ProductsTableHead = ({ selectedLength, rowsLength, selectAll }) => {
   );
 };
 
-export default ProductsTableHead;
+export default SelectableTableHead;

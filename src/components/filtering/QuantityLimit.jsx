@@ -13,6 +13,7 @@ const QuantityLimit = () => {
       <Typography variant="subtitle2">تعداد نتایج: </Typography>
       {submitted ? (
         <Chip
+          color="primary"
           label="حداکثر 100 عدد از نتایج"
           onDelete={() => {
             setSubmitted(false);
@@ -26,6 +27,7 @@ const QuantityLimit = () => {
             max={isUnitPercent && 100}
             startAdornment={
               <Chip
+                color="primary"
                 label={`${isUnitPercent ? "%" : "عدد"}`}
                 onClick={() => setIsUnitPercent(!isUnitPercent)}
                 size="large"

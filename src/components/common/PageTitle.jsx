@@ -6,7 +6,7 @@ const PageTitle = ({ children, subtitle = "", buttonInfo = false }) => {
   return (
     <Box sx={{ mb: 5, display: "flex" }}>
       <Box>
-        <Typography variant="h5" fontWeight={500}>
+        <Typography variant="h5" component="h1" fontWeight={500}>
           {children}
         </Typography>
         <VerticalSpace amount="10px" />

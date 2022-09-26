@@ -16,7 +16,7 @@ const ActionButton = ({ title, click }) => {
 };
 
 const styles = {
-  button: { height: "40px", color: "#FFF", borderRadius: "20px", px: 2 },
+  button: { height: "40px", color: "#000", borderRadius: "20px", px: 2 },
 };
 
 export default ActionButton;

@@ -1,19 +1,18 @@
-import { useState } from "react";
-import { Table, TableContainer, Paper } from "@mui/material";
-import { ProductsTableTitle, ProductsTableHead, ProductsTableBody } from ".";
-import { rows } from "../../assets/constants";
+import { Paper, Table, TableContainer } from "@mui/material";
+import SelectableTableBody from "./SelectableTableBody";
+import SelectableTableHead from "./SelectableTableHead";
+import SelectableTableTitle from "./SelectableTableTitle";
 
-const ProductsTable = () => {
-  const [selected, setSelected] = useState([]);
-
-  const selectAll = (e) => {
-    e.target.checked ? setSelected(rows) : setSelected([]);
-  };
-
+const SelectableTable = ({
+  rows,
+  headCells,
+  selected,
+  setSelected,
+  actionButtons = null,
+}) => {
   const handleClick = (name) => {
     const selectedIndex = selected.indexOf(name);
     let newSelected = [];
-
     if (selectedIndex === -1) {
       newSelected = newSelected.concat(selected, name);
     } else if (selectedIndex === 0) {
@@ -29,19 +28,28 @@ const ProductsTable = () => {
     setSelected(newSelected);
   };
 
+  const selectAll = (e) => {
+    e.target.checked ? setSelected(rows) : setSelected([]);
+  };
+
   const isSelected = (row) => selected.indexOf(row) !== -1;
 
   return (
     <Paper sx={styles.container} elevation={3}>
-      <ProductsTableTitle length={selected.length} />
+      <SelectableTableTitle
+        selectedLength={selected.length}
+        title="محصولات"
+        actionButtons={actionButtons}
+      />
       <TableContainer>
         <Table sx={styles.table} size="medium">
-          <ProductsTableHead
+          <SelectableTableHead
             selectAll={selectAll}
             selectedLength={selected.length}
             rowsLength={rows.length}
+            fieldsName={headCells}
           />
-          <ProductsTableBody
+          <SelectableTableBody
             isSelected={isSelected}
             handleClick={handleClick}
             data={rows}
@@ -57,4 +65,4 @@ const styles = {
   table: { minWidth: 750 },
 };
 
-export default ProductsTable;
+export default SelectableTable;
