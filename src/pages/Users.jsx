@@ -1,44 +1,32 @@
 import { Box } from "@mui/material";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { headCells, productFields, rows } from "../assets/constants";
 import { PageTitle } from "../components/common";
 import { Filtering, QuantityLimit, Sorting } from "../components/filtering";
-import { SelectableTable, ActionButtons } from "../components/table";
+import { ActionButtons, SelectableTable } from "../components/table";
 
-const Products = () => {
+const Users = () => {
   const [selected, setSelected] = useState([]);
-  const navigate = useNavigate();
 
   const buttonsInfo = [
     {
-      title: "اعمال تخفیف",
+      title: "ارسال تخفیف",
       click: () => {},
     },
     {
-      title: "حذف تخفیف",
+      title: "ارسال ایمیل",
       click: () => {},
     },
     {
-      title: "افزودن موجودی",
-      click: () => {},
-    },
-    {
-      title: "اتمام موجودی",
+      title: "ارسال پیامک",
       click: () => {},
     },
   ];
 
   return (
     <Box>
-      <PageTitle
-        subtitle="در این صفحه میتوانید تمامی تغییرات ممکن را روی محصولات اعمال کنید."
-        buttonInfo={{
-          title: "افزودن محصول جدید",
-          click: () => navigate("/add-product"),
-        }}
-      >
-        صفحه مدیریت محصولات
+      <PageTitle subtitle="در این صفحه میتوانید کاربران را مدیریت کنید.">
+        صفحه مدیریت کاربران
       </PageTitle>
       <Box sx={styles.filtersContainer}>
         <QuantityLimit />
@@ -46,7 +34,7 @@ const Products = () => {
         <Filtering fields={productFields} />
       </Box>
       <SelectableTable
-        title="محصولات"
+        title="کاربران"
         rows={rows}
         headCells={headCells}
         selected={selected}
@@ -65,4 +53,4 @@ const styles = {
   },
 };
 
-export default Products;
+export default Users;

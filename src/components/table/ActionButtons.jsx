@@ -1,26 +1,7 @@
 import { Box } from "@mui/material";
 import { ActionButton } from "../common";
 
-const ActionButtons = () => {
-  const buttonsInfo = [
-    {
-      title: "اعمال تخفیف",
-      click: () => {},
-    },
-    {
-      title: "حذف تخفیف",
-      click: () => {},
-    },
-    {
-      title: "افزودن موجودی",
-      click: () => {},
-    },
-    {
-      title: "اتمام موجودی",
-      click: () => {},
-    },
-  ];
-
+const ActionButtons = ({ buttonsInfo }) => {
   return (
     <Box sx={styles.container}>
       {buttonsInfo.map((btn) => (

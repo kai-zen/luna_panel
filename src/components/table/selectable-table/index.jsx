@@ -4,6 +4,7 @@ import SelectableTableHead from "./SelectableTableHead";
 import SelectableTableTitle from "./SelectableTableTitle";
 
 const SelectableTable = ({
+  title,
   rows,
   headCells,
   selected,
@@ -38,7 +39,7 @@ const SelectableTable = ({
     <Paper sx={styles.container} elevation={3}>
       <SelectableTableTitle
         selectedLength={selected.length}
-        title="محصولات"
+        title={title}
         actionButtons={actionButtons}
       />
       <TableContainer>
