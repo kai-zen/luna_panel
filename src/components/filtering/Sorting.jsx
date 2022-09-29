@@ -1,8 +1,7 @@
 import { useState } from "react";
-import { Box, Chip, Typography } from "@mui/material";
+import { Box, Button, Chip, Typography } from "@mui/material";
 import { Dropdown } from "../common";
 import { ascendingOrDescending } from "../../assets/constants";
-import { ApplyFilterButton } from ".";
 
 const Sorting = ({ fields }) => {
   // const { addSort, removeSort } = props;
@@ -13,6 +12,7 @@ const Sorting = ({ fields }) => {
       <Typography variant="subtitle2">مرتب سازی بر اساس: </Typography>
       {submitted ? (
         <Chip
+          color="primary"
           onDelete={() => {
             setSubmitted(false);
             // removeSort();
@@ -33,12 +33,17 @@ const Sorting = ({ fields }) => {
             <Dropdown data={fields} />
             <Dropdown data={ascendingOrDescending} />
           </Box>
-          <ApplyFilterButton
-            click={() => {
+          <Button
+            variant="contained"
+            size="small"
+            disableElevation
+            onClick={() => {
               setSubmitted(true);
-              // addSort();
+              // addFilter();
             }}
-          />
+          >
+            اعمال
+          </Button>
         </>
       )}
     </Box>

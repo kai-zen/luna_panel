@@ -1,8 +1,7 @@
-import { Box, Chip, Typography } from "@mui/material";
+import { Box, Button, Chip, Typography } from "@mui/material";
 import { useState } from "react";
 import { Dropdown, NumberInput } from "../common";
 import { moreOrLess } from "../../assets/constants";
-import { ApplyFilterButton } from ".";
 
 const Filtering = ({ fields }) => {
   // const { addFilter, removeFilter } = props;
@@ -13,6 +12,7 @@ const Filtering = ({ fields }) => {
       <Typography variant="subtitle2">فیلتر بر اساس: </Typography>
       {submitted ? (
         <Chip
+          color="primary"
           onDelete={() => {
             setSubmitted(false);
             // removeFilter();
@@ -27,12 +27,17 @@ const Filtering = ({ fields }) => {
             <Dropdown data={moreOrLess} />
             <NumberInput defaultValue={0} min={0} max={12_000_000} />
           </Box>
-          <ApplyFilterButton
-            click={() => {
+          <Button
+            variant="contained"
+            size="small"
+            disableElevation
+            onClick={() => {
               setSubmitted(true);
               // addFilter();
             }}
-          />
+          >
+            اعمال
+          </Button>
         </>
       )}
     </Box>

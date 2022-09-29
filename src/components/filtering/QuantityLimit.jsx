@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { Box, Chip, Typography } from "@mui/material";
+import { Box, Button, Chip, Typography } from "@mui/material";
 import { NumberInput } from "../common";
-import { ApplyFilterButton } from ".";
 
 const QuantityLimit = () => {
   // const { addFilter, removeFilter } = props;
@@ -35,12 +34,17 @@ const QuantityLimit = () => {
               />
             }
           />
-          <ApplyFilterButton
-            click={() => {
+          <Button
+            variant="contained"
+            size="small"
+            disableElevation
+            onClick={() => {
               setSubmitted(true);
               // addFilter();
             }}
-          />
+          >
+            اعمال
+          </Button>
         </>
       )}
     </Box>

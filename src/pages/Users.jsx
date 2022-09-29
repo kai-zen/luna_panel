@@ -10,7 +10,7 @@ const Users = () => {
 
   const buttonsInfo = [
     {
-      title: "ارسال تخفیف",
+      title: "افزودن تخفیف",
       click: () => {},
     },
     {
@@ -19,6 +19,14 @@ const Users = () => {
     },
     {
       title: "ارسال پیامک",
+      click: () => {},
+    },
+    {
+      title: "مسدود کردن",
+      click: () => {},
+    },
+    {
+      title: "رها کردن",
       click: () => {},
     },
   ];

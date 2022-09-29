@@ -1,11 +1,10 @@
 import { Paper, Table, TableContainer } from "@mui/material";
-import SelectableTableBody from "./SelectableTableBody";
-import SelectableTableHead from "./SelectableTableHead";
-import SelectableTableTitle from "./SelectableTableTitle";
+import SelectableTableHead from "../selectable-table/SelectableTableHead";
+import SelectableTableTitle from "../selectable-table/SelectableTableTitle";
+import BannerTableBody from "./BannerTableBody";
 
-const SelectableTable = (props) => {
+const BannerTable = (props) => {
   const {
-    title,
     rows,
     headCells,
     selected,
@@ -36,12 +35,11 @@ const SelectableTable = (props) => {
   };
 
   const isSelected = (row) => selected.indexOf(row) !== -1;
-
   return (
     <Paper sx={styles.container} elevation={3}>
       <SelectableTableTitle
         selectedLength={selected.length}
-        title={title}
+        title="بنر ها"
         actionButtons={actionButtons}
       />
       <TableContainer>
@@ -52,7 +50,7 @@ const SelectableTable = (props) => {
             rowsLength={rows.length}
             fieldsName={headCells}
           />
-          <SelectableTableBody
+          <BannerTableBody
             isSelected={isSelected}
             handleClick={handleClick}
             data={rows}
@@ -68,4 +66,4 @@ const styles = {
   table: { minWidth: 750 },
 };
 
-export default SelectableTable;
+export default BannerTable;
